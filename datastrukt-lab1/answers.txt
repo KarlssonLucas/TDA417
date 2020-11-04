@@ -1,0 +1,153 @@
+
+/******************************************************************************
+** DAT038, TDA417  Datastrukturer och algoritmer, LP2 2020
+** Lab 1: Sorting, Complexity
+*******************************************************************************/
+
+Name of lab group: [Group 105]
+Group member A:    [Jakob Ristner]
+Group member B:    [Oscar Kilberg]
+Group member C:    [Lucas Karlsson]
+
+
+/******************************************************************************
+** Task: Figuring out the complexity
+**
+** 1. What is the complexity of running each of the following algorithms
+**    on each of the following inputs?
+******************************************************************************/
+
+Insertion.java on:
+
+- random inputs:      [quadratic]
+- 95% sorted inputs:  [quadratic]
+- sorted inputs:      [non quadratic]
+
+Quick.java on:
+
+- random inputs:      [non quadratic]
+- 95% sorted inputs:  [non quadratic]
+- sorted inputs:      [quadratic]
+
+Merge.java on:
+
+- random inputs:      [non quadratic]
+- 95% sorted inputs:  [non quadratic]
+- sorted inputs:      [non quadratic]
+
+Arrays.sort on:
+
+- random inputs:      n / n log n
+- 95% sorted inputs:  [non quadratic]
+- sorted inputs:      [non quadratic]
+
+
+/******************************************************************************
+** Task: Improving quicksort
+**
+** 2. Do the following changes affect the complexity of quicksort
+**    on any kind of input data? If so, what is it that changes?
+******************************************************************************/
+
+Shuffling the array first:
+yes, since the pivot will be closer to the median of all list elements,
+this will assure more even distribtion of elements in the two "sub arrays"
+which will speed the algorithm up. If the list is already shuffled this has
+no effect, however if the list is sored or partially sorted the pivot chosen
+by getting the first elemement will be far from the median of all elements.
+
+
+Median-of-three pivot selection:
+yes, it will lower the average complexity since the pivot has a higher
+chance of being close to the median of all elements. Choosing only one
+element in a shuffled list will have a lower chance of acheiving this. This
+doesnt have much of an effect on the average case but lowers the chance of a 
+worst case occurence, especially since a new pivot is chosen in every
+recursive call basically eliminating the worst case quadratic complexity. The
+perfoamce decrease from accessing the array and choosing a median is negligible.
+
+
+Insertion sort for small arrays:
+yes, doesnt necessarily improve the average complexity from linearithmic
+but it does impact the speed of the sort of all sizes since insertion sort
+is quicker than quicksort for small arrays. It impacts sorting time for all
+sizes of arrays since the partitions or "sub arrays" reach this threshold
+after enough partitioning and therefor take advantage of insertion sort
+from there.
+
+
+/******************************************************************************
+** 3. What is a good cutoff to use for insertion sort?
+**    Explain briefly how you came to this answer.
+**    Remember that you should try to find the answer in a systematic way.
+******************************************************************************/
+
+The cutoff is optimal somewhere between 300 and 1000 elements. That is what
+we determined based on the data given by the benchmark. 
+Meaning that in arrays of size 1 to 300 we know for a fact that insertion
+sort is faster at sorting the array. We do not know how to test any sizes 
+between these two and so we picked 300 as the cutoff.
+
+
+/******************************************************************************
+** 4. Which combination of improvements gives the best performance?
+******************************************************************************/
+The best combination of improvements are the pivot median method and the 
+insertion sort. This is actually faste than all three at the same time.
+
+why?
+4.1 Random lists
+In this case the median method and the shuffle method are equiavlent and basically
+accomplish the same goal, the difference is thet the shuffling takes about
+2ms according to our data and the median pivot takes basically no time at all
+and has a consant complexity where as the complexity of shuffling a list is
+linear. Here we see and improvement by only using the median pivot method.
+
+4.2 Partially sorted list and sorted
+In this case the median method has a very high chance of actually picking the 
+real median element of the entire list. Shuffling the list priorly negates
+this affect and as stated previously they accomplish the same goal. There
+is still a small chance that the pivot will be something far off the median
+in the 95% sorted list but this is statistically negated since the pivot is
+chosen anew in every recursive call. 
+
+
+
+/******************************************************************************
+** Appendix: General information
+**
+** A. Approximately how many hours did you spend on the assignment?
+******************************************************************************/
+
+[Jakob Ristner]:  [1.5]
+[Oscar Kilberg]:  [1.5]
+[Lucas Karlsson]:  [1.5]
+
+
+/******************************************************************************
+** B. Are there any known bugs / limitations?
+******************************************************************************/
+The theoretical optimal cutoff could be more precisely determined but we 
+believe that 300 is pretty close to optimal.
+
+
+/******************************************************************************
+** C. Did you collaborate with any other students on this lab?
+**    If so, please write in what way you collaborated and with whom.
+**    Also include any resources (including the web) that you may
+**    may have used in creating your design.
+******************************************************************************/
+No
+
+/******************************************************************************
+** D. Describe any serious problems you encountered.                    
+******************************************************************************/
+None
+
+
+
+/******************************************************************************
+** E. List any other comments here.
+**    Feel free to provide any feedback on how much you learned 
+**    from doing the assignment, and whether you enjoyed it.                                             
+******************************************************************************/
