@@ -1,7 +1,6 @@
-
+import java.util.Deque;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-
 // TODO: Add documentation, including time complexity for each method
 
 class DynamicArrayDeque<Item> implements Deque<Item> {
@@ -20,52 +19,71 @@ class DynamicArrayDeque<Item> implements Deque<Item> {
         deque = (Item[]) new Object[INITIAL_CAPACITY];
         head = tail = size = 0;
     }
-
+    
+    // Complexity: O(1)
     public void addFirst(Item x) {
-        // TODO, a.k.a. push(x)
+        if (tail == head) {
+            resize(size*2);
+        }
+        deque[head] = x;
+        head = (head+1) % size;
     }
-
+    
+    // Complexity: O(1)
     public void addLast(Item x) {
-        // TODO, a.k.a. enqueue(x)
+        if (tail == head) {
+            resize(size*2);
+        }
+        deque[tail] = x;
+        tail = (tail+1) % size;
     }
 
+    // Complexity: O(1)
     public Item removeFirst() {
         if (isEmpty()) throw new NoSuchElementException("Deque underflow");
-        // TODO, a.k.a. pop() and dequeue()
+        deque[head] = null;
+        head = (head+1) % size;
         return null;
     }
 
+    // Complexity: O(1)
     public Item removeLast() {
         if (isEmpty()) throw new NoSuchElementException("Deque underflow");
-        // TODO
+        tail = (tail - 1) % size;
+        deque[tail] = null;
         return null;
     }
 
+    //Complexity: O(n)
     @SuppressWarnings("unchecked")
     private void resize(int capacity) {
         // We don't want to go below the INITIAL_CAPACITY
-        if (capacity < INITIAL_CAPACITY) return;
-        // TODO
+        if (capacity < INITIAL_CAPACITY) {
+            return;
+        } else {
+            Item [] newdeq = (Item[]) (new Object [capacity]);
+            for (int i = 0; i<size; i++) {
+                 newdeq[i] = deque[((i+head)%size)];
+            }
+            deque = newdeq;
+            size = capacity;
+        }
     }
 
     public Item getFirst() {
-        // TODO, a.k.a. peek()
-        return null;
+        return deque[head];
     }
 
     public Item getLast() {
-        // TODO
-        return null;
+        return deque[tail-1];
     }
 
     public boolean isEmpty() {
-        // TODO
-        return true;
+        return deque[head] == null;
     }
 
     public int size() {
-        // TODO
-        return 0;
+        return size;
     }
 
     // Iterate through all elements in the deque, in the order from first to last

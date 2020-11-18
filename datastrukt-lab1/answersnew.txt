@@ -19,27 +19,27 @@ Group member C:    [Lucas Karlsson]
 
 Insertion.java on:
 
-- random inputs:      [quadratic]
-- 95% sorted inputs:  [quadratic]
-- sorted inputs:      [non quadratic]
+- random inputs:      [n^2]
+- 95% sorted inputs:  [n or n log n]
+- sorted inputs:      [n or n log n]
 
 Quick.java on:
 
-- random inputs:      [non quadratic]
-- 95% sorted inputs:  [non quadratic]
-- sorted inputs:      [quadratic]
+- random inputs:      [n or n log n]
+- 95% sorted inputs:  [n or n log n]
+- sorted inputs:      [n^2]
 
 Merge.java on:
 
-- random inputs:      [non quadratic]
-- 95% sorted inputs:  [non quadratic]
-- sorted inputs:      [non quadratic]
+- random inputs:      [n or n log n]
+- 95% sorted inputs:  [n or n log n]
+- sorted inputs:      [n or n log n]
 
 Arrays.sort on:
 
 - random inputs:      n / n log n
-- 95% sorted inputs:  [non quadratic]
-- sorted inputs:      [non quadratic]
+- 95% sorted inputs:  [n or n log n]
+- sorted inputs:      [n or n log n]
 
 
 /******************************************************************************
@@ -55,7 +55,9 @@ this will assure more even distribtion of elements in the two "sub arrays"
 which will speed the algorithm up. If the list is already shuffled this has
 no effect, however if the list is sored or partially sorted the pivot chosen
 by getting the first elemement will be far from the median of all elements.
-
+When we shuffle the array for all kinds of inputs we get rid of the quadratic
+complexity of sorted arrays and get a linear one. This has a massive
+affect on the time it takes to sort the array. 
 
 Median-of-three pivot selection:
 yes, it will lower the average complexity since the pivot has a higher
@@ -65,7 +67,10 @@ doesnt have much of an effect on the average case but lowers the chance of a
 worst case occurence, especially since a new pivot is chosen in every
 recursive call basically eliminating the worst case quadratic complexity. The
 perfoamce decrease from accessing the array and choosing a median is negligible.
-
+Since the worst case is affected heavily by this, sorted arrays when you chose
+the first element as the pivot has a awfull complexity. We have again changed
+the complexity of the sorted array from quadratic to a more linear. And even
+faster. 
 
 Insertion sort for small arrays:
 yes, doesnt necessarily improve the average complexity from linearithmic
@@ -73,7 +78,7 @@ but it does impact the speed of the sort of all sizes since insertion sort
 is quicker than quicksort for small arrays. It impacts sorting time for all
 sizes of arrays since the partitions or "sub arrays" reach this threshold
 after enough partitioning and therefor take advantage of insertion sort
-from there.
+from there.  
 
 
 /******************************************************************************
@@ -83,7 +88,8 @@ from there.
 ******************************************************************************/
 
 The cutoff is optimal somewhere between 300 and 1000 elements. That is what
-we determined based on the data given by the benchmark. 
+we determined based on the data given by the benchmark. Further testing would 
+be required to determine the exact optimal cutoff value.
 Meaning that in arrays of size 1 to 300 we know for a fact that insertion
 sort is faster at sorting the array. We do not know how to test any sizes 
 between these two and so we picked 300 as the cutoff.

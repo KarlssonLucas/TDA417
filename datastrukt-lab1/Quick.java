@@ -16,18 +16,14 @@ public class Quick {
      * Rearranges the array in ascending order, using the natural order.
      * @param a the array to be sorted
      */
-    public static void sort(int[] a) { 
+    public static void sort(int[] a) {
         sort(a, 0, a.length - 1);
         assert isSorted(a);
     }
 
     // quicksort the subarray from a[lo] to a[hi]
     public static void sort(int[] a, int lo, int hi) { 
-        if ((hi - lo) <= 300) {
-            Insertion.sort(a, lo, hi);
-            return;
-        }
-
+        // TODO: try switching to insertion sort if a[lo..hi] is small.
         if (hi <= lo) return;
 
         int j = partition(a, lo, hi);
@@ -39,12 +35,13 @@ public class Quick {
     // partition the subarray a[lo..hi] so that a[lo..j-1] <= a[j] <= a[j+1..hi]
     // and return the index j.
     private static int partition(int[] a, int lo, int hi) {
+        
         int i = lo;
         int j = hi + 1;
         int middle = (lo + hi) / 2;
         int median = median3(a, lo, middle, hi);
         exch(a, lo, median);
-        
+                    
         int v = a[lo];
 
         // a[lo] is unique largest element

@@ -1,4 +1,3 @@
-
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -7,7 +6,7 @@ import java.util.NoSuchElementException;
 class DynamicArray<Item> implements List<Item> {
 
     public DynamicArray() {
-        // TODO
+         
     }
 
     public void add(int i, Item x) {

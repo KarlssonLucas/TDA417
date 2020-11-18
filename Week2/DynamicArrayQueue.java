@@ -22,35 +22,51 @@ class DynamicArrayQueue<Item> implements Queue<Item> {
     }
 
     public void enqueue(Item x) {
-        // TODO
+        if (size == queue.length){
+            resize(2*queue.length); 
+        }
+        queue[tail] = x;
+        tail = (tail+1)%size;
     }
 
     public Item dequeue() {
         if (isEmpty()) throw new NoSuchElementException("Queue underflow");
-        // TODO
-        return null;
+        if (size == queue.length) {
+            resize(2*queue.length);
+        }
+        Item temp = queue[head];
+        queue[head] = null
+        head = (head+1) % size;
+        return temp;
     }
 
     @SuppressWarnings("unchecked")
     private void resize(int capacity) {
-        // We don't want to go below the INITIAL_CAPACITY
-        if (capacity < INITIAL_CAPACITY) return;
-        // TODO
+        if (capacity > INITIAL_CAPACITY) {
+            Item[] newqueue = (Item[]) new Object[capacity];
+            size = queue.length;
+            for(int i = 0; i<size; i++) {
+                newqueue[i] = queue[((head+i)%size)];
+            }
+            head = 0;
+            tail = size;
+        }
     }
 
     public Item peek() {
-        // TODO
-        return null;
+        return queue[head]; 
     }
 
     public boolean isEmpty() {
-        // TODO
-        return true;
+        return queue[head] == null;
     }
 
     public int size() {
-        // TODO
-        return 0;
+        if (isEmpty()) {
+            return 0;
+        } else if (queue[head] != null && head != tail) {
+            return 
+        }
     }
 
     // Iterate through all elements in the queue, in the order they will be removed

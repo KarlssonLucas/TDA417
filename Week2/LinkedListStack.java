@@ -24,7 +24,7 @@ class LinkedListStack<Item> implements Stack<Item> {
     }
 
     public void push(Item x) {
-        // TODO
+        
     }
 
     public Item pop() {
