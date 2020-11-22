@@ -25,4 +25,16 @@ public class bstNODE {
             this.value = value;
         }
    }
+
+   public Object get(String key) {
+        if(this.key.equals(key)) {
+            return value;
+        }
+ 
+        if(key.compareTo(this.key) < 0) {
+            return left == null ? null : left.get(key);
+        } else {
+        return right == null ? null : right.get(key);
+        }
+   }
 }
