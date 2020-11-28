@@ -1,3 +1,4 @@
+package pack;
 public class bstNODE {
     String key;
     Object value;
