@@ -1,0 +1,98 @@
+
+/******************************************************************************
+** DAT038, TDA417  Datastrukturer och algoritmer, LP2 2020
+** Lab 2: Autocomplete
+*******************************************************************************/
+
+Name of lab group: [105]
+Group member A:    [Jakob Ristner]
+Group member B:    [Lucas Karlsson]
+Group member C:    [Oscar Kilberg]
+
+
+/******************************************************************************
+** 1. Describe how your firstIndexOf() method in RangeBinarySearch.java
+**    finds the first index of a key that equals the search key.
+******************************************************************************/
+We use a traditional binary search method taking an array, a key and a comparator as
+arguments. Them only thing that differs this from a normal one is that it does not stop
+once mid is equal to the key we are searching for. If this is the case, the algorithm
+will set hi to me equal to mid, therefor now "inching" our way down in the list one
+element at a time. This will eventually lead us to find the first occurrence of the key.
+
+
+
+/******************************************************************************
+** 2. What is the worst case time complexity in the number of compares
+**    that each of the operations in the Autocomplete data type make,
+**    as a function of the number of terms n and the number of matching terms m?
+******************************************************************************/
+
+sortDictionary():  [n log n]
+Sorting the dictionary is done prior to matching any terms and therefor the algorithm is
+not dependent on $m$. The algorithm used is the standard implementation in java for
+arrays. 
+
+
+
+allMatches():  [log n + (m log m) + m]
+Here we search for matches twice with binary search, an algorithm with logarithmic
+complexity dependent on the size of input. The size of the input of our binary search
+calls is n. This is called twice and since big O notation does not care about
+constant, both of the binary search calls combined will still have logarithmic
+complexity.
+
+The other algorithm used is sorting the matches by weight, this has
+linearithmic complexity but its input size is m this time, the amount of matches. The
+complexity for the entire method will therefor be additive.
+
+We also need to loop through all our matches and copy them in a array of matches,
+this has the complexity m. The amount of matches.
+
+numberOfMatches():  [log n]
+This method does basically the same thing as the first part of the allMacthes method
+with the two binary search calls but without sorting. Since both of these
+binary search algorithms have logarithmic complexity and  do not depend on the number of
+matches, the entire method has linearithmic complexity.
+
+
+
+
+/******************************************************************************
+** Appendix: General information
+**
+** A. Approximately how many hours did you spend on the assignment?
+******************************************************************************/
+
+[Jakob Ristner ]:  [3 hours]
+[Lucas Karlsson]:  [3 hours]
+[OscarKilberg  ]:  [3 hours]
+
+
+/******************************************************************************
+** B. Are there any known bugs / limitations?
+******************************************************************************/
+
+/******************************************************************************
+** C. Did you collaborate with any other students on this lab?
+**    If so, please write in what way you collaborated and with whom.
+**    Also include any resources (including the web) that you may
+**    may have used in creating your design.
+******************************************************************************/
+
+No.
+
+
+/******************************************************************************
+** D. Describe any serious problems you encountered.                    
+******************************************************************************/
+
+
+
+/******************************************************************************
+** E. List any other comments here.
+**    Feel free to provide any feedback on how much you learned 
+**    from doing the assignment, and whether you enjoyed it.                                             
+******************************************************************************/
+
+
