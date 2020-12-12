@@ -1,0 +1,112 @@
+
+/******************************************************************************
+** DAT038, TDA417  Datastrukturer och algoritmer, LP2 2020
+** Lab 3: Plagiarism detection
+*******************************************************************************/
+
+Name of lab group: [Group 105]
+Group member A:    [Jakob Ristner]
+Group member B:    [Lucas Karlsson]
+Group member C:    [Oscar Kilberg]
+
+
+/******************************************************************************
+** Task: Running the slow program
+**
+** 1. What is the complexity of findSimilarity?
+**    Answer in terms of N, the total number of 5-grams in the input files.
+**    Assume that the number of 5-grams that occur in more than one file
+**    is a small constant - that is, there is not much plagiarised text.
+******************************************************************************/
+d^2 + n^2
+
+
+/******************************************************************************
+** 2. How long did the program take on the 'small' and 'medium' directories?
+**    Is the ratio between the times what you would expect, given the complexity?
+**    Explain very briefly why.
+*******************************************************************************/
+It took 3 seconds for the small directory, with our predicted complexity we believe
+that the medium directory would take about 10 minutes~ maybe more.
+
+
+/******************************************************************************
+** 3. How long do you predict the program would take to run on
+**    the 'huge' directory? Show your calculations.
+*******************************************************************************/
+Close to 100 hours, maybe closer to 60
+
+
+/******************************************************************************
+** Task: Using binary search trees
+**
+** 4. Which of the trees usually become unbalanced?
+******************************************************************************/
+
+files
+
+/******************************************************************************
+** 5 (optional). Is there a simple way to stop these trees becoming unbalanced?
+******************************************************************************/
+
+[...]
+
+
+/******************************************************************************
+** Task: Using scapegoat trees
+**
+** 6. Now what is the total complexity of buildIndex and findSimilarity?
+**    Again, assume a total of N 5-grams, and a constant number of 5-grams
+**    that occur in more than one file.
+******************************************************************************/
+
+It seems as, by analyzing the time for each of the files to be linear time compelxity
+
+/******************************************************************************
+** 7 (optional). What if the total similarity score is an arbitrary number S,
+**               rather than a small constant?
+******************************************************************************/
+
+[...]
+
+
+
+/******************************************************************************
+** Appendix: General information
+**
+** A. Approximately how many hours did you spend on the assignment?
+******************************************************************************/
+
+[Jakob Ristner]:  [3h]
+[Lucas Karlsson]:  [3h]
+[Oscar Kilberg]:  [3h]
+
+
+/******************************************************************************
+** B. Are there any known bugs / limitations?
+******************************************************************************/
+
+no
+
+/******************************************************************************
+** C. Did you collaborate with any other students on this lab?
+**    If so, please write in what way you collaborated and with whom.
+**    Also include any resources (including the web) that you may
+**    may have used in creating your design.
+******************************************************************************/
+
+no
+
+/******************************************************************************
+** D. Describe any serious problems you encountered.                    
+******************************************************************************/
+
+
+
+/******************************************************************************
+** E. List any other comments here.
+**    Feel free to provide any feedback on how much you learned 
+**    from doing the assignment, and whether you enjoyed it.                                             
+******************************************************************************/
+
+

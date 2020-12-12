@@ -1,0 +1,121 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+BST	BST.java	/^    public BST() {$/;"	m	class:BST
+BST	BST.java	/^public class BST<Key extends Comparable<Key>, Value> {$/;"	c
+Lab3	Lab3.java	/^public class Lab3 {$/;"	c
+Ngram	Ngram.java	/^    public Ngram(String[] tokens, int offset, int length) {$/;"	m	class:Ngram
+Ngram	Ngram.java	/^class Ngram implements Comparable<Ngram> {$/;"	c
+Node	BST.java	/^        public Node(Key key, Value val, int size) {$/;"	m	class:BST.Node
+Node	BST.java	/^    private class Node {$/;"	c	class:BST
+Node	ScapegoatTree.java	/^        public Node(Key key, Value val) {$/;"	m	class:ScapegoatTree.Node
+Node	ScapegoatTree.java	/^    private class Node {$/;"	c	class:ScapegoatTree
+PathPair	PathPair.java	/^    public PathPair(Path path1, Path path2) {$/;"	m	class:PathPair
+PathPair	PathPair.java	/^public class PathPair implements Comparable<PathPair> {$/;"	c
+ScapegoatTree	ScapegoatTree.java	/^    public ScapegoatTree() {$/;"	m	class:ScapegoatTree
+ScapegoatTree	ScapegoatTree.java	/^public class ScapegoatTree<Key extends Comparable<Key>, Value> {$/;"	c
+Stopwatch	Stopwatch.java	/^    public Stopwatch() {$/;"	m	class:Stopwatch
+Stopwatch	Stopwatch.java	/^public class Stopwatch { $/;"	c
+alpha	ScapegoatTree.java	/^    final double alpha = 2;        \/\/ how unbalanced the tree may become;$/;"	f	class:ScapegoatTree
+at	Ngram.java	/^    public String at(int i) { return tokens[i+offset]; }$/;"	m	class:Ngram
+balanceNodes	ScapegoatTree.java	/^    private Node balanceNodes(ArrayList<Node> nodes, int lo, int hi) {$/;"	m	class:ScapegoatTree	file:
+buildIndex	Lab3.java	/^    static BST<Ngram, ArrayList<Path>> buildIndex(BST<Path, Ngram[]> files) {$/;"	m	class:Lab3
+builder	Stopwatch.java	/^    private StringBuilder builder = new StringBuilder();$/;"	f	class:Stopwatch	file:
+check	BST.java	/^    private boolean check() {$/;"	m	class:BST	file:
+check	ScapegoatTree.java	/^    private boolean check() {$/;"	m	class:ScapegoatTree	file:
+compareTo	Ngram.java	/^    public int compareTo(Ngram other) {$/;"	m	class:Ngram
+compareTo	PathPair.java	/^    public int compareTo(PathPair other) {$/;"	m	class:PathPair
+contains	BST.java	/^    public boolean contains(Key key) {$/;"	m	class:BST
+contains	ScapegoatTree.java	/^    public boolean contains(Key key) {$/;"	m	class:ScapegoatTree
+elapsedTime	Stopwatch.java	/^    public double elapsedTime() {$/;"	m	class:Stopwatch
+equals	Ngram.java	/^    public boolean equals(Object obj) {$/;"	m	class:Ngram
+equals	PathPair.java	/^    public boolean equals(Object obj) {$/;"	m	class:PathPair
+findMostSimilar	Lab3.java	/^    static ArrayList<PathPair> findMostSimilar(BST<PathPair, Integer> similarity) {$/;"	m	class:Lab3
+findSimilarity	Lab3.java	/^    static BST<PathPair, Integer> findSimilarity(BST<Path, Ngram[]> files, BST<Ngram, ArrayList</;"	m	class:Lab3
+finished	Stopwatch.java	/^    public void finished(String task) {$/;"	m	class:Stopwatch
+get	BST.java	/^    private Value get(Node x, Key key) {$/;"	m	class:BST	file:
+get	BST.java	/^    public Value get(Key key) {$/;"	m	class:BST
+get	ScapegoatTree.java	/^    private Value get(Node x, Key key) {$/;"	m	class:ScapegoatTree	file:
+get	ScapegoatTree.java	/^    public Value get(Key key) {$/;"	m	class:ScapegoatTree
+hashCode	Ngram.java	/^    public int hashCode() {$/;"	m	class:Ngram
+hashCode	PathPair.java	/^    public int hashCode() {$/;"	m	class:PathPair
+height	BST.java	/^    private int height(Node x) {$/;"	m	class:BST	file:
+height	BST.java	/^    public int height() {$/;"	m	class:BST
+height	ScapegoatTree.java	/^        private int height;        \/\/ height of subtree$/;"	f	class:ScapegoatTree.Node	file:
+height	ScapegoatTree.java	/^    private int height(Node x) {$/;"	m	class:ScapegoatTree	file:
+height	ScapegoatTree.java	/^    public int height() {$/;"	m	class:ScapegoatTree
+inorder	ScapegoatTree.java	/^    private void inorder(Node node, ArrayList<Node> nodes) {$/;"	m	class:ScapegoatTree	file:
+isBST	BST.java	/^    private boolean isBST() {$/;"	m	class:BST	file:
+isBST	BST.java	/^    private boolean isBST(Node x, Key min, Key max) {$/;"	m	class:BST	file:
+isBST	ScapegoatTree.java	/^    private boolean isBST() {$/;"	m	class:ScapegoatTree	file:
+isBST	ScapegoatTree.java	/^    private boolean isBST(Node x, Key min, Key max) {$/;"	m	class:ScapegoatTree	file:
+isBalanced	ScapegoatTree.java	/^    private boolean isBalanced() { return isBalanced(root); }$/;"	m	class:ScapegoatTree	file:
+isBalanced	ScapegoatTree.java	/^    private boolean isBalanced(Node x) {$/;"	m	class:ScapegoatTree	file:
+isEmpty	BST.java	/^    public boolean isEmpty() {$/;"	m	class:BST
+isEmpty	ScapegoatTree.java	/^    public boolean isEmpty() {$/;"	m	class:ScapegoatTree
+isHeightConsistent	ScapegoatTree.java	/^    private boolean isHeightConsistent() { return isHeightConsistent(root); }$/;"	m	class:ScapegoatTree	file:
+isHeightConsistent	ScapegoatTree.java	/^    private boolean isHeightConsistent(Node x) {$/;"	m	class:ScapegoatTree	file:
+isSizeConsistent	BST.java	/^    private boolean isSizeConsistent() { return isSizeConsistent(root); }$/;"	m	class:BST	file:
+isSizeConsistent	BST.java	/^    private boolean isSizeConsistent(Node x) {$/;"	m	class:BST	file:
+isSizeConsistent	ScapegoatTree.java	/^    private boolean isSizeConsistent() { return isSizeConsistent(root); }$/;"	m	class:ScapegoatTree	file:
+isSizeConsistent	ScapegoatTree.java	/^    private boolean isSizeConsistent(Node x) {$/;"	m	class:ScapegoatTree	file:
+key	BST.java	/^        private Key key;           \/\/ sorted by key$/;"	f	class:BST.Node	file:
+key	ScapegoatTree.java	/^        private Key key;           \/\/ sorted by key$/;"	f	class:ScapegoatTree.Node	file:
+keys	BST.java	/^    private void keys(Node x, ArrayList<Key> queue, Key lo, Key hi) { $/;"	m	class:BST	file:
+keys	BST.java	/^    public Iterable<Key> keys() {$/;"	m	class:BST
+keys	BST.java	/^    public Iterable<Key> keys(Key lo, Key hi) {$/;"	m	class:BST
+keys	ScapegoatTree.java	/^    private void keys(Node x, ArrayList<Key> queue, Key lo, Key hi) { $/;"	m	class:ScapegoatTree	file:
+keys	ScapegoatTree.java	/^    public Iterable<Key> keys() {$/;"	m	class:ScapegoatTree
+keys	ScapegoatTree.java	/^    public Iterable<Key> keys(Key lo, Key hi) {$/;"	m	class:ScapegoatTree
+left	BST.java	/^        private Node left, right;  \/\/ left and right subtrees$/;"	f	class:BST.Node	file:
+left	ScapegoatTree.java	/^        private Node left, right;  \/\/ left and right subtrees$/;"	f	class:ScapegoatTree.Node	file:
+length	Ngram.java	/^    private int offset, length;$/;"	f	class:Ngram	file:
+length	Ngram.java	/^    public int length() { return length; }$/;"	m	class:Ngram
+log2	ScapegoatTree.java	/^    private int log2(int n) {$/;"	m	class:ScapegoatTree	file:
+main	Lab3.java	/^    public static void main(String[] args) {$/;"	m	class:Lab3
+main	Stopwatch.java	/^    public static void main(String[] args) {$/;"	m	class:Stopwatch
+max	BST.java	/^    private Node max(Node x) {$/;"	m	class:BST	file:
+max	BST.java	/^    public Key max() {$/;"	m	class:BST
+max	ScapegoatTree.java	/^    private Node max(Node x) {$/;"	m	class:ScapegoatTree	file:
+max	ScapegoatTree.java	/^    public Key max() {$/;"	m	class:ScapegoatTree
+min	BST.java	/^    private Node min(Node x) { $/;"	m	class:BST	file:
+min	BST.java	/^    public Key min() {$/;"	m	class:BST
+min	ScapegoatTree.java	/^    private Node min(Node x) { $/;"	m	class:ScapegoatTree	file:
+min	ScapegoatTree.java	/^    public Key min() {$/;"	m	class:ScapegoatTree
+ngrams	Ngram.java	/^    public static Ngram[] ngrams(String input, int n) {$/;"	m	class:Ngram
+offset	Ngram.java	/^    private int offset, length;$/;"	f	class:Ngram	file:
+path1	PathPair.java	/^    public final Path path1, path2;$/;"	f	class:PathPair
+path2	PathPair.java	/^    public final Path path1, path2;$/;"	f	class:PathPair
+put	BST.java	/^    private Node put(Node x, Key key, Value val) {$/;"	m	class:BST	file:
+put	BST.java	/^    public void put(Key key, Value val) {$/;"	m	class:BST
+put	ScapegoatTree.java	/^    private Node put(Node node, Key key, Value val) {$/;"	m	class:ScapegoatTree	file:
+put	ScapegoatTree.java	/^    public void put(Key key, Value val) {$/;"	m	class:ScapegoatTree
+readPaths	Lab3.java	/^    static BST<Path, Ngram[]> readPaths(Path[] paths) throws IOException {$/;"	m	class:Lab3
+rebuild	ScapegoatTree.java	/^    private Node rebuild(Node node) {$/;"	m	class:ScapegoatTree	file:
+rebuilds	ScapegoatTree.java	/^    private int rebuilds;          \/\/ number of times rebuild() was called, for statistics$/;"	f	class:ScapegoatTree	file:
+rebuilds	ScapegoatTree.java	/^    public int rebuilds() {$/;"	m	class:ScapegoatTree
+report	Stopwatch.java	/^    public void report(String task) {$/;"	m	class:Stopwatch
+reset	Stopwatch.java	/^    public void reset() {$/;"	m	class:Stopwatch
+right	BST.java	/^        private Node left, right;  \/\/ left and right subtrees$/;"	f	class:BST.Node	file:
+right	ScapegoatTree.java	/^        private Node left, right;  \/\/ left and right subtrees$/;"	f	class:ScapegoatTree.Node	file:
+root	BST.java	/^    private Node root;             \/\/ root of BST$/;"	f	class:BST	file:
+root	ScapegoatTree.java	/^    private Node root;             \/\/ root of BST$/;"	f	class:ScapegoatTree	file:
+size	BST.java	/^        private int size;          \/\/ number of nodes in subtree$/;"	f	class:BST.Node	file:
+size	BST.java	/^    private int size(Node x) {$/;"	m	class:BST	file:
+size	BST.java	/^    public int size() {$/;"	m	class:BST
+size	ScapegoatTree.java	/^        private int size;          \/\/ number of nodes in subtree$/;"	f	class:ScapegoatTree.Node	file:
+size	ScapegoatTree.java	/^    private int size(Node x) {$/;"	m	class:ScapegoatTree	file:
+size	ScapegoatTree.java	/^    public int size() {$/;"	m	class:ScapegoatTree
+start	Stopwatch.java	/^    private long start;$/;"	f	class:Stopwatch	file:
+statistics	BST.java	/^    public String statistics() {$/;"	m	class:BST
+statistics	ScapegoatTree.java	/^    public String statistics() {$/;"	m	class:ScapegoatTree
+toString	Ngram.java	/^    public String toString() {$/;"	m	class:Ngram
+toString	PathPair.java	/^    public String toString() {$/;"	m	class:PathPair
+tokens	Ngram.java	/^    private String[] tokens;$/;"	f	class:Ngram	file:
+val	BST.java	/^        private Value val;         \/\/ associated data$/;"	f	class:BST.Node	file:
+val	ScapegoatTree.java	/^        private Value val;         \/\/ associated data$/;"	f	class:ScapegoatTree.Node	file:
