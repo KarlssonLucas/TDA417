@@ -1,0 +1,192 @@
+
+/******************************************************************************
+** DAT038, TDA417  Datastrukturer och algoritmer, LP2 2020
+** Lab 4: Path finder
+*******************************************************************************/
+
+Name of lab group: Group 105
+Group member A:    Jakob Ristner
+Group member B:    Lucas Karlsson
+Group member C:    Oscar Kilberg
+
+
+/******************************************************************************
+** 1. List the minimal cost, shortest path, and nr of loop iterations,
+**    for each of the following invocations.
+******************************************************************************/
+
+> java RunPathFinder ucs AdjacencyGraph graphs/AdjacencyGraph/citygraph-SE.txt Lund Kiruna
+
+loop iterations: 5427
+minimal cost:    1826
+shortest path:   32
+
+> java RunPathFinder ucs NPuzzle 3 "/HFG/BED/C_A/" "/ABC/DEF/GH_/"
+
+loop iterations: 483573
+minimal cost:    31
+shortest path:   32
+
+> java RunPathFinder astar NPuzzle 3 "/HFG/BED/C_A/" "/ABC/DEF/GH_/"
+
+loop iterations: 32375  
+minimal cost:    31
+
+> java RunPathFinder ucs NPuzzle 3 "/HGF/BED/C_A/" "/ABC/DEF/GH_/"
+
+loop iterations: 483841
+minimal cost:    no path found
+shortest path:   no path found
+
+> java RunPathFinder ucs GridGraph graphs/GridGraph/AR0011SR.map "23:161" "130:211"
+
+loop iterations: 159327
+minimal cost:    ~366.404
+shortest path:   309
+
+> java RunPathFinder astar GridGraph graphs/GridGraph/AR0011SR.map "23:161" "130:211"
+
+loop iterations: 95160  
+minimal cost:    309
+
+> java RunPathFinder ucs WordLadder graphs/WordLadder/words-saldo.txt syster broder
+
+loop iterations: 135142
+minimal cost:    11
+shortest path:   12
+
+> java RunPathFinder astar WordLadder graphs/WordLadder/words-saldo.txt syster broder
+
+loop iterations: 9827
+minimal cost:    11
+
+
+/******************************************************************************
+** 2. For each of the three classes GridGraph, WordLadder and NPuzzle,
+**    what is the approximate improvement in the nr. of iterations,
+**    by running A* instead of UCS?
+**    Try a number of different examples per class.
+******************************************************************************/
+
+GridGraph: It seems as though A* gets proportionately faster and faster than UCS the bigger size of the maze and cost. For the really small once it was less than a 50% improvement but with the really big ones A* had less than half the iterations of UCS.
+
+WordLadder: Same here with A* getting faster and faster than ucs the larger
+the more iterations there are. However here the difference is roughly between 
+135 and 70 times increase in speed.
+
+NPuzzle: Here with the examples with iterations in the thousands for astar, the difference hovers around a factor of 100 aswell.
+
+/******************************************************************************
+** 3. For which of the three classes GridGraph, WordLadder and NPuzzle,
+**    did the heuristics .guessCost() have the most impact?
+**    Why do you think this is the case?
+******************************************************************************/
+
+The difference was much more pronounced in NPuzzle and WordLadder than in GridGraph. We believe that this is because the methods of guessing the cost in 
+NPuzzle and WordLadder (Euclidian distance and Counting letters respectively) 
+are simply better at approximating the total cost than the manhattan method in
+the GridGraph guessCost.
+
+
+/******************************************************************************
+** 4. Give pseudo-code of the following methods that you implemented
+******************************************************************************/
+
+WordLadder.outgoingEdges(String w):
+words = []
+for ch1 in word:
+    for ch2 in charset:
+        set word char to ch2 at pos of ch1
+        if isword(word):
+            add word to words
+return words
+
+WordLadder.guessCost(String w, String u):
+diff = 0
+for c1, c2 in word1, word2:
+    if c1 == c2:
+        diff++
+return diff
+
+
+GridGraph.guessCost(Coord p, Coord q):
+return sqrt((px - qx)^2 + (py - qy)^2) 
+
+
+/******************************************************************************
+** 5. Give pseudo-code of the method .searchAstar() in PathFinder
+******************************************************************************/
+
+PathFinder.searchAstar(Node start, Node goal):
+pqueue = new Priorityqueue
+visited = new Set
+
+while not pqueue.isEmpty:
+    entry = pqueue.dequeue
+
+    if entry == goal:
+        return entry
+
+    if entry not in visited:
+        for edge in entry.edges:
+            pqueue.add(new entry(edge.to, costToNextNode, pathToHere, iterationsToHere))
+    visited.add(entry)
+    
+
+return failed
+
+
+/******************************************************************************
+** 6. What are the main differences between your implementations 
+**    of .searchAstar() and .searchUCS()?
+******************************************************************************/
+
+when ucs decides which node it wants to look at next, it simply chooses
+the one that is "closest" to where it is right now, the costToHere variable.
+The astar algorithm chooses the one it predicts has the shortest path to the
+goal node using the heuristics of guessCost. 
+
+
+
+/******************************************************************************
+** Appendix: General information
+**
+** A. Approximately how many hours did you spend on the assignment?
+******************************************************************************/
+
+[Jakob Ristner]:  [3]
+[Oscar Kilberg]:  [3]
+[Lucas Karlsson]:  [3]
+
+
+/******************************************************************************
+** B. Are there any known bugs / limitations?
+******************************************************************************/
+
+no
+
+
+/******************************************************************************
+** C. Did you collaborate with any other students on this lab?
+**    If so, please write in what way you collaborated and with whom.
+**    Also include any resources (including the web) that you may
+**    may have used in creating your design.
+******************************************************************************/
+
+no
+
+
+/******************************************************************************
+** D. Describe any serious problems you encountered.                    
+******************************************************************************/
+
+
+
+/******************************************************************************
+** E. List any other comments here.
+**    Feel free to provide any feedback on how much you learned 
+**    from doing the assignment, and whether you enjoyed it.                                             
+******************************************************************************/
+
+
+
